@@ -8,6 +8,10 @@
 //merge- prima data e inpartit in 2 jumatati
 //merge-si tot asa pana cand ai cate un array de un singur elem 
 //merge- apoi incepe reconstructia (merge)si sortarea in acelasi timp
+//const -merg pe ROM- asa ca accesarea e mai rapida
+//la template nu poti imparti in headere si cpp-uri
+// alg de cautare - binary search -O(log n);
+//  ---dezavantaj- nu functioneaza decat pe seturi de date sortate
 
 void merge(std::vector<int>& arr,int left, int middle, int right)
 {
@@ -99,6 +103,22 @@ for(i=0;i<n-1;i++)
     }
 }
 
+void search(std::vector<int> vec, int x)
+{
+for (int i=0;i<vec.size();i++)
+{
+    if (vec[i] ==x)
+    {
+    std::cout<<i<<std::endl;
+    return;
+    }
+    else
+    std::cout<< x<<" not found"<<std::endl;
+
+}
+
+}
+
 
  
 int main()
@@ -137,6 +157,7 @@ for (auto elem:v)
     std::cout<<elem<<" ";
 }
 std::cout<<std::endl;
+search(v,7);
 
     return 0;
 }
