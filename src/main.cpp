@@ -109,13 +109,49 @@ for (int i=0;i<vec.size();i++)
 {
     if (vec[i] ==x)
     {
-    std::cout<<i<<std::endl;
+    std::cout<<"linear search "<<i<<std::endl;
     return;
     }
     else
-    std::cout<< x<<" not found"<<std::endl;
+    std::cout<<"linear search"<< x<<" not found"<<std::endl;
 
 }
+
+}
+
+void simpleBinarySearch(std::vector<int> vec,int x)
+{
+    int middle=vec.size()/2;
+    if (vec[middle]==x)
+    {
+    std::cout<<"binary search: x was found at "<<middle<<std::endl;
+    return;
+    }
+    else if(x>vec[middle])
+    {
+        for(int i=middle;i<vec.size();i++)
+        {
+            if(vec[i]==x)
+            {
+            std::cout<<"bin search x was found at "<<x<<std::endl;
+            return;
+            }
+            else std::cout<<"bin search x was not found\n";
+        }
+    }
+    else
+    {
+        for (int i=middle;i>=0;i--)
+        {
+          if(vec[i]==x)
+            {
+            std::cout<<"bin search x was found at "<<x<<std::endl;
+            return;
+            }
+            else std::cout<<"bin search x was not found\n";  
+        }
+    }
+ 
 
 }
 
@@ -157,7 +193,8 @@ for (auto elem:v)
     std::cout<<elem<<" ";
 }
 std::cout<<std::endl;
-search(v,7);
+search(v,3);
+simpleBinarySearch(v,3);
 
     return 0;
 }
